@@ -1,0 +1,118 @@
+body {
+  background: linear-gradient(135deg, #222 0%, #4f8cff 100%);
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin-top: 2rem;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  font-size: 2.4rem;
+}
+
+.game {
+  background: rgba(30,30,40,0.95);
+  box-shadow: 0 6px 36px #1c1c3b33;
+  border-radius: 16px;
+  padding: 2rem;
+  min-width: 350px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.dice-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.dice {
+  width: 80px;
+  height: 80px;
+  background: #f8f8fa;
+  color: #1c1c3b;
+  border-radius: 16px;
+  font-size: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px #001d7faa;
+  transition: transform 0.2s cubic-bezier(.55,2,.15,.88);
+  margin-bottom: 8px;
+}
+
+.roll-anim {
+  animation: dice-anim 0.4s cubic-bezier(.20,.80,.50,1.4) 1;
+}
+
+@keyframes dice-anim {
+  0% { transform: scale(1) rotate(0deg);}
+  40% { transform: scale(0.6) rotate(120deg);}
+  80% { transform: scale(1.3) rotate(-30deg);}
+  100% { transform: scale(1) rotate(0deg);}
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 1.2rem;
+  margin: 18px 0 0 0;
+}
+
+.score {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 4px 0 0 0;
+}
+
+button {
+  background: #f8c10f;
+  color: #25252d;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 36px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1.8rem 0 0 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 12px #00358036;
+}
+
+button:hover {
+  background: #ff6600;
+  color: #fff;
+  transform: scale(1.07);
+}
+
+.message {
+  margin-top: 1rem;
+  font-size: 1.35rem;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  min-height: 2.5rem;
+  transition: color 0.2s;
+}
+
+.winner {
+  color: #ffe164;
+  text-shadow: 0 2px 6px #000c;
+  font-size: 1.7rem;
+  margin: 1rem 0 0.2rem 0;
+  display: block;
+  animation: trophy 0.5s;
+}
+
+@keyframes trophy {
+  0% {transform: translateY(-20px) scale(0.75);}
+  90% {transform: translateY(6px) scale(1.06);}
+  100% {transform: translateY(0px) scale(1);}
+}
